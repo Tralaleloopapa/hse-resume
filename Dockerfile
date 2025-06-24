@@ -21,7 +21,7 @@ RUN apt-get update && apt-get install -y \
 WORKDIR /cv
 
 COPY entrypoint.sh .
-COPY cv ./cv
+COPY src ./cv
 
 RUN chmod +x entrypoint.sh
 
