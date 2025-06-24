@@ -3,12 +3,15 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
+    container:
+      image: blang/latex:ubuntu
     steps:
     - uses: actions/checkout@v4
-    - name: Build with Docker
+    - name: Build PDF
       run: |
-        docker build -t resume-builder .
-        docker run --rm -v ${PWD}:/src resume-builder
+        cd src
+        pdflatex resume.tex
+        mv resume.pdf ../
     - name: Upload PDF
       uses: actions/upload-artifact@v4
       with:

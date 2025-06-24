@@ -1,4 +1,4 @@
 FROM blang/latex:ubuntu
 WORKDIR /src
-COPY . .
+COPY src/resume.tex .
 RUN pdflatex resume.tex
