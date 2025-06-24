@@ -10,7 +10,7 @@ jobs:
         docker build -t resume-builder .
         docker run --rm -v ${PWD}:/src resume-builder
     - name: Upload PDF
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: resume
         path: resume.pdf
