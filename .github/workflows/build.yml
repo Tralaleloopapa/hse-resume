@@ -1,0 +1,16 @@
+name: Build Resume
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Build with Docker
+      run: |
+        docker build -t resume-builder .
+        docker run --rm -v ${PWD}:/src resume-builder
+    - name: Upload PDF
+      uses: actions/upload-artifact@v3
+      with:
+        name: resume
+        path: resume.pdf
