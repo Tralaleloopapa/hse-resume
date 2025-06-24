@@ -9,9 +9,9 @@ jobs:
     - name: Build Docker image
       run: docker build -t resume .
     - name: Run build
-      run: docker run --rm -v ${{ github.workspace }}:/src resume
+      run: docker run --rm -v ${{ github.workspace }}:/cv resume
     - name: Upload PDF
       uses: actions/upload-artifact@v4
       with:
         name: Resume
-        path: src/resume.pdf
+        path: resume.pdf
