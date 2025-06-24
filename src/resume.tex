@@ -1,4 +1,84 @@
-\documentclass{article}
+\documentclass[10pt,a4paper,ragged2e,withhyper]{altacv}
+\geometry{left=1.25cm,right=1.25cm,top=1.5cm,bottom=1.5cm,columnsep=1.2cm}
+\usepackage{paracol}
+
+\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{LightGrey}{HTML}{666666}
+\definecolor{DarkPastelRed}{HTML}{450808}
+\definecolor{PastelRed}{HTML}{8F0D0D}
+\definecolor{GoldenEarth}{HTML}{E7D192}
+\colorlet{name}{black}
+\colorlet{tagline}{PastelRed}
+\colorlet{heading}{DarkPastelRed}
+\colorlet{headingrule}{GoldenEarth}
+\colorlet{subheading}{PastelRed}
+\colorlet{accent}{PastelRed}
+\colorlet{emphasis}{SlateGrey}
+\colorlet{body}{LightGrey}
+
+\renewcommand{\namefont}{\Huge\rmfamily\bfseries}
+\renewcommand{\personalinfofont}{\footnotesize}
+\renewcommand{\cvsectionfont}{\LARGE\rmfamily\bfseries}
+\renewcommand{\cvsubsectionfont}{\large\bfseries}
+\renewcommand{\cvItemMarker}{{\small\textbullet}}
+\renewcommand{\cvRatingMarker}{\faCircle}
+
 \begin{document}
-Мое резюме
+
+\name{Dmitry Toporov}
+\tagline{HSE Student • Aspiring Data Analyst}
+\personalinfo{
+  \email{ditoporov@gmail.com}
+  \phone{+7 985 184 7211}
+  \location{Moscow, Russia}
+}
+
+\makecvheader
+
+\columnratio{0.6}
+\begin{paracol}{2}
+
+\cvsection{Experience}
+
+\cvevent{Self-Initiated Projects}{Data Analysis Practice}{2023 -- present}{}
+\begin{itemize}
+  \item Conducted Titanic dataset analysis with survival breakdown by gender and age; visualized insights using Pandas and Matplotlib.
+  \item Designed a relational database schema for a fictional car dealership; built ER diagrams and sample queries.
+\end{itemize}
+
+\cvsection{Education}
+
+\cvevent{Bachelor’s in Data Analytics}{National Research University HSE}{2022 -- expected 2026}{Moscow}
+
+\cvsection{Skills}
+
+\cvtag{Python}
+\cvtag{SQL (Basic)}
+\cvtag{Pandas}
+\cvtag{NumPy}
+\cvtag{Matplotlib}
+\cvtag{Statistics}
+\cvtag{Database Design}
+
+\switchcolumn
+
+\cvsection{Projects}
+
+\cvachievement{\faChartBar}{Titanic Data Analysis}{\href{https://colab.research.google.com/drive/1u-KXHKIwBQ9AWDfcKPw0fCImriRhkKDy?usp=sharing}{Google Colab link}}
+
+\divider
+
+\cvachievement{\faDatabase}{Car Dealership DB Schema}{\href{https://disk.yandex.ru/i/AuRQciSh-SCiFA}{Yandex.Disk with ERD}}
+
+\cvsection{Languages}
+
+\cvskill{Russian (native)}{5}
+\divider
+\cvskill{English (B2)}{4}
+
+\cvsection{About Me}
+
+Highly motivated undergraduate student with a strong interest in data analytics and practical experience in exploratory data analysis, databases, and Python. Always looking to learn new tools and apply skills in real-world settings.
+
+\end{paracol}
 \end{document}
